@@ -1,0 +1,51 @@
+{
+  "Model Information": {
+    "Name": "Credit Risk Random Forest v1.0",
+    "Version": "1.0",
+    "Date": "2026-03-22",
+    "Type": "Binary Classification",
+    "Algorithm": "Random Forest Classifier"
+  },
+  "Intended Use": {
+    "Purpose": "Predict probability of loan default",
+    "Scope": "Personal loans under $50,000",
+    "Users": "Loan officers and credit analysts",
+    "Decisions": "Decision support tool (not fully automated)"
+  },
+  "Training Data": {
+    "Source": "Synthetic dataset",
+    "Size": "5000 records",
+    "Time Period": "Simulated 2020-2023",
+    "Features": [
+      "age",
+      "income",
+      "loan_amount",
+      "credit_score",
+      "debt_to_income",
+      "employment_years",
+      "late_payments",
+      "gender",
+      "education",
+      "marital_status"
+    ]
+  },
+  "Performance Metrics": {
+    "Accuracy": "0.882",
+    "ROC-AUC": "0.947"
+  },
+  "Fairness Assessment": {
+    "Gender Disparate Impact": "0.963",
+    "Age Disparate Impact": "1.021",
+    "Status": "Pass"
+  },
+  "Known Limitations": [
+    "May underperform for customers with thin credit files",
+    "Not validated on economic recession data",
+    "Uses features that may correlate with protected attributes"
+  ],
+  "Recommended Mitigations": [
+    "Human review for cases with probability between 0.3-0.7",
+    "Monthly fairness monitoring dashboard",
+    "Quarterly model retraining with new data"
+  ]
+}
